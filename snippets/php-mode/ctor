@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: constructor
+# key: ctor
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+public function __construct(${1:$arg, ...}):
+{
+    $0
+}

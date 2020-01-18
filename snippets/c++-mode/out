@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: out
+# key: out
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+std::cout << $0 << std::endl;

@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# name: shopware detail subscriber
+# key: sw_subscriber_detail
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?php
+
+namespace ${1:`(projectile-project-name)`}\Subscriber;
+
+use Enlight\Event\SubscriberInterface;
+
+final class DetailSubscriber implements SubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return [
+            'Enlight_Controller_Action_PostDispatchSecure_Frontend_Detail' => 'onPostDispatch',
+        ];
+    }
+
+    /**
+     * @param Enlight_Event_EventArgs $args
+     */
+    public function onPostDispatch(\Enlight_Event_EventArgs $args)
+    {
+        $0
+    }
+}

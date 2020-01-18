@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: clang-format on
+# key: cfon
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+// clang-format on

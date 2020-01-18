@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: de_formal
+# key: defml
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+Sehr geehrter $1,
+
+$0
+
+Mit freundlichen Grüßen,
+Daniel Richtmann

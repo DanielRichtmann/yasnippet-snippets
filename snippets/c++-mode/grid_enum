@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: grid_enum
+# key: grid_enum
+# group: grid
+# contributor : Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+GRID_SERIALIZABLE_ENUM(${1:enum_name}, undef,
+                       $0, 1
+);

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: title
+# key: <l
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+#+BEGIN_LATEX
+$0
+#+END_LATEX

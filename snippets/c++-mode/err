@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: err
+# key: err
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+std::cerr << $0 << std::endl;

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: clang-format off
+# key: cfoff
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+// clang-format off

@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: script
+# key: script
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+#!/bin/bash -eu
+
+function ${1:function_name}() {
+    local -r usage="
+Usage: \${FUNCNAME[0]} ${2:description_of_arguments}"
+
+    if [[ \$# != ${3:allowed_number_of_arguments} ]]; then
+        echo "$usage" >> /dev/stderr
+        return 1
+    fi
+
+    $0
+}
+
+$1 "\$@"

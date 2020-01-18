@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: en_formal
+# key: enfml
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+Dear $1,
+
+$0
+
+Best regards,
+Daniel Richtmann

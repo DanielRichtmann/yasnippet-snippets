@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: leftarrow
+# key: <-
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+$\leftarrow$

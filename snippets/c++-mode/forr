@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: forr
+# key: forr
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+for (${1:auto} ${2:const}${3:& }${4:elem} : ${5:range}) {
+    $0
+}

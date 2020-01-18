@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: Grid serializable parameter struct
+# key: grid_param_struct
+# group: grid
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+struct ${1:name} : Serializable {
+public:
+  GRID_SERIALIZABLE_CLASS_MEMBERS($1,
+                                  $0
+                                  );
+
+  $1(
+  )
+  {};
+};

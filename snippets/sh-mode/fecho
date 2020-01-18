@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: function echo (echo with function name prefix)
+# key: fecho
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+echo "\${FUNCNAME[0]}: $0"

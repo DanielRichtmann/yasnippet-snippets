@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: de_casual
+# key: decsl
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+Hi $1,
+
+$0
+
+Grüße,
+Daniel
