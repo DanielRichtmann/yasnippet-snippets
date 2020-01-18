@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: chapter
+# key: chap
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+\chapter{${1:name}}
+\label{chap:${2:label}}
+
+$0

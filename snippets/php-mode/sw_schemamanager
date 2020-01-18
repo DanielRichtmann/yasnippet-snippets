@@ -1,0 +1,199 @@
+# -*- mode: snippet -*-
+# name: shopware schemamanager class
+# key: sw_schemamanager
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?php
+
+namespace `(projectile-project-name)`\Bootstrap;
+
+use Doctrine\DBAL\Connection;
+
+final class SchemaManager
+{
+    /**
+     * @var Connection
+     */
+    private $db;
+
+    /**
+     * @var string
+     */
+    private $pluginName;
+
+    public function __construct(
+        Connection $db,
+        string $pluginName
+    ) {
+        $this->db = $db;
+        $this->pluginName = $pluginName;
+    }
+
+    /**
+     * @return bool|null
+     *
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function update(string $version = null)
+    {
+        return $this->runAllMigrations($this->getStartSchemaVersion($version));
+    }
+
+    /**
+     * @return bool|null
+     *
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function uninstall()
+    {
+        return $this->runAllMigrations(-$this->getSchemaVersion(), -1);
+    }
+
+    /**
+     * @param string|null $version
+     *
+     * @return int
+     */
+    private function getStartSchemaVersion($version)
+    {
+        // TODO
+        return 0;
+    }
+
+    /**
+     * @return int
+     *
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    private function getSchemaVersion()
+    {
+        $tableExists = (bool) $this->db->executeQuery('SHOW TABLES LIKE "swkwe_schema_versions"')->fetchColumn();
+
+        if ($tableExists) {
+            $version = $this->db->executeQuery('
+                    SELECT version FROM swkwe_schema_versions WHERE plugin = ?
+                ', [$this->pluginName,])->fetchColumn();
+
+            if ($version !== false) {
+                return (int) $version;
+            }
+        }
+
+        return -1;
+    }
+
+    /**
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    private function setSchemaVersion(int $version)
+    {
+        if ($version >= 0) {
+            $this->db->executeQuery('
+                CREATE TABLE IF NOT EXISTS swkwe_schema_versions (
+                    plugin VARCHAR(255) NOT NULL UNIQUE,
+                    version INT NOT NULL
+                ) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB
+            ');
+
+            $this->db->executeQuery('
+                REPLACE INTO swkwe_schema_versions (plugin, version) VALUES (?, ?)
+            ', [$this->pluginName, (int) $version,]);
+        } else {
+            $this->db->executeQuery('
+                DELETE FROM swkwe_schema_versions WHERE plugin = ?
+            ', [$this->pluginName,]);
+
+            $pluginSchemaCount = $this->db->executeQuery('SELECT COUNT(*) FROM swkwe_schema_versions')->fetchColumn();
+            if (!$pluginSchemaCount) {
+                $this->db->executeQuery('DROP TABLE swkwe_schema_versions');
+            }
+        }
+    }
+
+    /**
+     * @return string
+     */
+    private function getMigrationPath(int $version = null)
+    {
+        $dir = __DIR__ . '/Migrations/';
+        $filePath = $dir . (int) $version . '.php';
+
+        if (filter_var($version, \FILTER_VALIDATE_INT) !== false && file_exists($filePath)) {
+            return $filePath;
+        }
+
+        return $dir;
+    }
+
+    /**
+     * @return bool|null
+     *
+     * @throws \Exception
+     */
+    private function runMigration(int $version, bool $throwException = false)
+    {
+        $sql = include $this->getMigrationPath($version);
+
+        if (empty($sql) || !is_string($sql)) {
+            return null;
+        }
+
+        try {
+            $this->db->executeQuery($sql);
+            return true;
+        } catch (\Exception $e) {
+            if ($throwException) {
+                throw $e;
+            }
+            return false;
+        }
+    }
+
+    /**
+     * @return bool|null
+     *
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    private function runAllMigrations(int $startVersion = 0, int $endVersion = null)
+    {
+        if ($startVersion >= 0) {
+            $startVersion = max($startVersion, $this->getSchemaVersion() + 1);
+        }
+
+        $migrations = [];
+
+        $dir = new \RegexIterator(
+            new \DirectoryIterator($this->getMigrationPath()),
+            '#^(-?\d+)\.php$#',
+            \RegexIterator::GET_MATCH
+        );
+
+        foreach ($dir as $file) {
+            $version = (int) $file[1];
+
+            if ($version >= $startVersion && ($endVersion === null || $version <= $endVersion)) {
+                $migrations[] = $version;
+            }
+        }
+
+        sort($migrations);
+
+        if (empty($migrations)) {
+            return null;
+        }
+
+        $result = null;
+        foreach ($migrations as $version) {
+            $result = $this->runMigration($version);
+
+            if (!$result) {
+                break;
+            }
+        }
+
+        $this->setSchemaVersion($version);
+
+        return $result;
+    }
+}

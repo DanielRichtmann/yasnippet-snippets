@@ -1,0 +1,35 @@
+# -*- mode: snippet -*-
+# name: shopware services.xml file
+# key: sw_services_xml_file
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <imports>
+        <import resource="${1:other_services_xml_to_import}"/>
+    </imports>
+
+    <parameters>
+        <parameter key="${2:`(string-inflection-underscore-function (projectile-project-name))`}.view_dir">%$2.plugin_dir%/Resources/views</parameter>
+        <parameter key="$2.smarty_dir">%$2.plugin_dir%/Resources/smarty</parameter>
+        <parameter key="$2.model_dir">%$2.plugin_dir%/Models</parameter>
+    </parameters>
+
+    <services>
+        <!-- Fieldhelpers -->
+        $0
+
+        <!-- Hydrators -->
+
+        <!-- Gateways -->
+
+        <!-- Services -->
+
+        <!-- Service Decorations -->
+
+        <!-- Subscribers -->
+    </services>
+</container>

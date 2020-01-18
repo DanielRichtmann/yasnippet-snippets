@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+# name: shopware generic service
+# key: sw_service_generic
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?php
+
+namespace `(projectile-project-name)`\Service;
+
+final class ${1:ServiceName}Service
+{
+    /**
+     * @var $2
+     */
+    private \$$3;
+
+    public function __construct(
+        ${2:InjectedObjectName} \$${3:memberName},
+    ) {
+        $this->$3 = \$$3;
+    }
+
+    $0
+}

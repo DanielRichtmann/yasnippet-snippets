@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: shopware option entry in config.xml
+# key: sw_config_xml_entry_option
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<option>
+    <value>${1:0}</value>
+    <label lang="de">${2:Deutsche Optionsbeschreibung}</label>
+    <label>${3:English option description}</label>
+</option>

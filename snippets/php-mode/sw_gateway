@@ -1,0 +1,67 @@
+# -*- mode: snippet -*-
+# name: shopware gateway class
+# key: sw_gateway
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?php
+
+namespace `(projectile-project-name)`\Gateway;
+
+use Doctrine\DBAL\Connection;
+use `(projectile-project-name)`\Gateway\Hydrator\\$3Hydrator;
+
+final class ${1:GatewayName}Gateway
+{
+    /**
+     * @var Connection
+     */
+    private $db;
+
+    /**
+     * @var ${2:FieldHelperName}FieldHelper
+     */
+    private $fieldHelper;
+
+    /**
+     * @var ${3:HydratorName}Hydrator
+     */
+    private $hydrator;
+
+    /**
+     * @param Connection $db
+     */
+    public function __construct(
+        Connection $db,
+        $2FieldHelper $fieldHelper,
+        $3Hydrator $hydrator
+    ) {
+        $this->db = $db;
+        $this->fieldHelper = $fieldHelper;
+        $this->hydrator = $hydrator;
+    }
+
+    /**
+     * @return array
+     */
+    public function ${3:functionToExecuteFromOutside}()
+    {
+        $qb = $this->getQueryBuilder();
+
+        return $qb->execute()->fetchAll();
+    }
+
+    /**
+     * @return \Doctrine\DBAL\Query\QueryBuilder
+     */
+    private function getQueryBuilder()
+    {
+        $qb = $this->db->createQueryBuilder();
+
+        $qb
+            $0
+        ;
+
+        return $qb;
+    }
+}

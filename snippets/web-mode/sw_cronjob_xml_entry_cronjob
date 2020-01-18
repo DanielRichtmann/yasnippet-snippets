@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: shopware cronjob entry in cronjob.xml
+# key: sw_cronjob_xml_entry_cronjob
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<cronjob>
+    <name>${1:Clear text name}</name>
+    <action>Shopware_CronJob_`(projectile-project-name)`${2:CronJobName}</action>
+    <active>${3:true}</active>
+    <interval>${4:86400}</interval>
+    <disableOnError>${5:true}</disableOnError>
+</cronjob>

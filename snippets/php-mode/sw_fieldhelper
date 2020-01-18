@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: shopware fieldhelper class
+# key: sw_fieldhelper
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?php
+
+namespace `(projectile-project-name)`\Gateway;
+
+final class FieldHelper
+{
+    public function get${1:Name}Fields()
+    {
+        return [
+            ${0:'name.id as __name_id'},
+        ];
+    }
+}

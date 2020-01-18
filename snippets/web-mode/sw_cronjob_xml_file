@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: shopware cronjob.xml file
+# key: sw_cronjob_xml_file
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?xml version="1.0" encoding="utf-8"?>
+<cronjobs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.5/engine/Shopware/Components/Plugin/schema/cronjob.xsd">
+    <cronjob>
+        <name>${1:Clear text name}</name>
+        <action>Shopware_CronJob_`(projectile-project-name)`${2:CronJobName}</action>
+        <active>${3:true}</active>
+        <interval>${4:86400}</interval>
+        <disableOnError>${5:true}</disableOnError>
+    </cronjob>
+</cronjobs>

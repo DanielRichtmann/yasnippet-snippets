@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: shopware plugin.xml file
+# key: sw_plugin_xml_file
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.5/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label>${1:`(replace-regexp-in-string "Swkwe" "" (projectile-project-name))`}</label>
+    <label lang="de">${2:german_version}</label>
+
+    <version>${3:0.0.1}</version>
+
+    <author>SWK Web</author>
+    <link>https://swk-web.com</link>
+    <license>proprietary</license>
+    <copyright>SWK Web</copyright>
+
+    <compatibility minVersion="${4:5.5.0}"/>
+</plugin>

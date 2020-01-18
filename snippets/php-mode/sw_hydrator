@@ -1,0 +1,35 @@
+# -*- mode: snippet -*-
+# name: shopware hydrator class
+# key: sw_hydrator
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?php
+
+namespace `(projectile-project-name)`\Gateway\Hydrator;
+
+use `(projectile-project-name)`\Struct;
+
+final class ${1:HydratorName}Hydrator
+{
+    /**
+     * @param string[] $data
+     *
+     * @return Struct\\$1
+     */
+    public function hydrate(array $data)
+    {
+        \$${1:$(if (> (length yas-text) 0) (format "%s%s" (downcase (substring yas-text 0 1)) (substring yas-text 1 (length yas-text))) "")} = $this->hydrate$1($data);
+
+        return \$${1:$(if (> (length yas-text) 0) (format "%s%s" (downcase (substring yas-text 0 1)) (substring yas-text 1 (length yas-text))) "")};
+    }
+
+    private function hydrate$1(array $data)
+    {
+        \$${1:$(if (> (length yas-text) 0) (format "%s%s" (downcase (substring yas-text 0 1)) (substring yas-text 1 (length yas-text))) "")} = new Struct$1();
+
+        $0
+
+        return \$${1:$(if (> (length yas-text) 0) (format "%s%s" (downcase (substring yas-text 0 1)) (substring yas-text 1 (length yas-text))) "")};
+    }
+}

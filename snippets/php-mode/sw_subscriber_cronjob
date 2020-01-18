@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# name: shopware cronjob subscriber
+# key: sw_subscriber_cronjob
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<?php
+
+namespace ${1:`(projectile-project-name)`}\Subscriber;
+
+use Enlight\Event\SubscriberInterface;
+
+final class CronjobSubscriber implements SubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return [
+            'Shopware_CronJob_$1${2:CronJobName}' => 'on${3:SomethingRelatedToTheCronJobName}'
+        ];
+    }
+
+    /**
+     * @throws \Enlight_Exception
+     */
+    public function on$3(\Shopware_Components_Cron_CronJob $cronJob)
+    {
+        $0
+    }
+}

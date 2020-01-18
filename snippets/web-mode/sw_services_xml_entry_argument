@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: shopware argument entry in services.xml
+# key: sw_services_xml_entry_argument
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<argument type="service" id="${1:service_id}"/>

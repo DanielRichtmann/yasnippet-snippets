@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: shopware template subscriber entry in services.xml
+# key: sw_services_xml_entry_templatesubscriber
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<service id="${1:$(string-inflection-underscore-function yas-text)}.subscriber.template"
+         class="${1:`(projectile-project-name)`}\Subscriber\TemplateSubscriber">
+    <argument type="service" id="config"/>
+    <argument type="string">%${1:$(string-inflection-underscore-function yas-text)}.view_dir%</argument>
+    <argument type="string">%${1:$(string-inflection-underscore-function yas-text)}.smarty_dir%</argument>
+    <tag name="shopware.event_subscriber"/>
+</service>

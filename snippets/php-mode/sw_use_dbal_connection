@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: shopware use statement for dbal connection
+# key: sw_use_dbal_connection
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+use Doctrine\DBAL\Connection;

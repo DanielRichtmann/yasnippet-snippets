@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: shopware boolean entry in config.xml
+# key: sw_config_xml_entry_boolean
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<element type="boolean" scope="locale">
+    <name>`(string-inflection-camelcase-function (projectile-project-name))`${1:VariableName}</name>
+    <label lang="de">${2:Deutsche Beschreibung}</label>
+    <label>${3:English description}</label>
+    <value>${4:true_or_fals}</value>
+</element>

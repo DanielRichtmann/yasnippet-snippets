@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: shopware fieldhelper entry in services.xml
+# key: sw_services_xml_entry_fieldhelper
+# group: shopware
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<service id="`(string-inflection-underscore-function (projectile-project-name))`.field_helper.${1:$(string-inflection-underscore-function yas-text)}"
+         class="`(projectile-project-name)`\Gateway\\${1:FieldHelperName}FieldHelper">
+</service>
