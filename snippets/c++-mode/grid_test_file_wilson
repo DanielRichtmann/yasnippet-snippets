@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
   pRNG.SeedFixedIntegers(seeds);
 
   // clang-format off
-  LatticeFermion    src(UGrid); src = zero;
+  LatticeFermion    src(UGrid); src = Zero();
   LatticeFermion    res(UGrid); random(pRNG, res);
   LatticeGaugeField Umu(UGrid); SU3::HotConfiguration(pRNG, Umu);
   // clang-format on

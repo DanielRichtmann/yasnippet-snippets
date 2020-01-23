@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
 
   // clang-format off
   LatticeFermion    src(UGrid); random(pRNG, src);
-  LatticeFermion    res(UGrid); res = zero;
+  LatticeFermion    res(UGrid); res = Zero();
   LatticeGaugeField Umu(UGrid); SU3::HotConfiguration(pRNG, Umu);
   // clang-format on
 
