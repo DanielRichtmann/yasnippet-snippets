@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware template subscriber entry in services.xml
-# key: sw_services_xml_entry_templatesubscriber
-# group: shopware
+# name: shopware5 template subscriber entry in services.xml
+# key: sw5_services_xml_entry_templatesubscriber
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <service id="${1:$(string-inflection-underscore-function yas-text)}.subscriber.template"

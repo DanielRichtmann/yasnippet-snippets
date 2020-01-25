@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware generic service
-# key: sw_service_generic
-# group: shopware
+# name: shopware5 generic service
+# key: sw5_service_generic
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?php

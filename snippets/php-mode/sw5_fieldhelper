@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware fieldhelper class
-# key: sw_fieldhelper
-# group: shopware
+# name: shopware5 fieldhelper class
+# key: sw5_fieldhelper
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?php

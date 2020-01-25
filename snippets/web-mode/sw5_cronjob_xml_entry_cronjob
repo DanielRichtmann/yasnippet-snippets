@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware cronjob entry in cronjob.xml
-# key: sw_cronjob_xml_entry_cronjob
-# group: shopware
+# name: shopware5 cronjob entry in cronjob.xml
+# key: sw5_cronjob_xml_entry_cronjob
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <cronjob>

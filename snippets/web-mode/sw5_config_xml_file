@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware config.xml file
-# key: sw_config_xml_file
-# group: shopware
+# name: shopware5 config.xml file
+# key: sw5_config_xml_file
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?xml version="1.0" encoding="utf-8"?>

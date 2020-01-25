@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware boolean entry in config.xml
-# key: sw_config_xml_entry_boolean
-# group: shopware
+# name: shopware5 boolean entry in config.xml
+# key: sw5_config_xml_entry_boolean
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <element type="boolean" scope="locale">

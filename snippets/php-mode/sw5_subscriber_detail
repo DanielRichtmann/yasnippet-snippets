@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware generic subscriber
-# key: sw_subscriber_generic
-# group: shopware
+# name: shopware5 detail subscriber
+# key: sw5_subscriber_detail
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?php
@@ -10,19 +10,19 @@ namespace ${1:`(projectile-project-name)`}\Subscriber;
 
 use Enlight\Event\SubscriberInterface;
 
-final class ${2:`(yas-php-get-class-name-by-file-name)`} implements SubscriberInterface
+final class DetailSubscriber implements SubscriberInterface
 {
     public static function getSubscribedEvents()
     {
         return [
-            '${3:Event_Or_Hook_Name_To_Subscribe_To}' => '${4:functionToCall}',
+            'Enlight_Controller_Action_PostDispatchSecure_Frontend_Detail' => 'onPostDispatch',
         ];
     }
 
     /**
      * @param Enlight_Event_EventArgs $args
      */
-    public function $4(\Enlight_Event_EventArgs $args)
+    public function onPostDispatch(\Enlight_Event_EventArgs $args)
     {
         $0
     }

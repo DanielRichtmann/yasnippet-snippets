@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware gateway class
-# key: sw_gateway
-# group: shopware
+# name: shopware5 gateway class
+# key: sw5_gateway
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?php

@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware schemamanager class
-# key: sw_schemamanager
-# group: shopware
+# name: shopware5 schemamanager class
+# key: sw5_schemamanager
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?php

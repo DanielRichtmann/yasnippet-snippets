@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware services.xml file
-# key: sw_services_xml_file
-# group: shopware
+# name: shopware5 services.xml file
+# key: sw5_services_xml_file
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?xml version="1.0" encoding="utf-8"?>

@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware subscriber entry in services.xml
-# key: sw_services_xml_entry_subscriber
-# group: shopware
+# name: shopware5 subscriber entry in services.xml
+# key: sw5_services_xml_entry_subscriber
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <service id="`(string-inflection-underscore-function (projectile-project-name))`.subscriber.${1:$(string-inflection-underscore-function yas-text)}"

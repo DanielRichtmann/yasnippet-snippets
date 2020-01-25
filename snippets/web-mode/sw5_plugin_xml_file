@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware plugin.xml file
-# key: sw_plugin_xml_file
-# group: shopware
+# name: shopware5 plugin.xml file
+# key: sw5_plugin_xml_file
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?xml version="1.0" encoding="utf-8"?>

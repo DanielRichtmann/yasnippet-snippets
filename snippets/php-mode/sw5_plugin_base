@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware plugin base class
-# key: sw_plugin_base
-# group: shopware
+# name: shopware5 plugin base class
+# key: sw5_plugin_base
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?php

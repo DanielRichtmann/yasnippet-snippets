@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware hydrator class
-# key: sw_hydrator
-# group: shopware
+# name: shopware5 hydrator class
+# key: sw5_hydrator
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?php

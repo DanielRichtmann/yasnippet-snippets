@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware service entry in services.xml
-# key: sw_services_xml_entry_service
-# group: shopware
+# name: shopware5 service entry in services.xml
+# key: sw5_services_xml_entry_service
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <service id="`(string-inflection-underscore-function (projectile-project-name))`.service.${1:$(string-inflection-underscore-function yas-text)}"

@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware cronjob subscriber
-# key: sw_subscriber_cronjob
-# group: shopware
+# name: shopware5 cronjob subscriber
+# key: sw5_subscriber_cronjob
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?php

@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware select entry in config.xml
-# key: sw_config_xml_entry_select
-# group: shopware
+# name: shopware5 select entry in config.xml
+# key: sw5_config_xml_entry_select
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <element type="select" scope="locale">

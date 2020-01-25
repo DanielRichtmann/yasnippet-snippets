@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware option entry in config.xml
-# key: sw_config_xml_entry_option
-# group: shopware
+# name: shopware5 option entry in config.xml
+# key: sw5_config_xml_entry_option
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <option>

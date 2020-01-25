@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: shopware template subscriber
-# key: sw_subscriber_template
-# group: shopware
+# name: shopware5 template subscriber
+# key: sw5_subscriber_template
+# group: shopware5
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
 <?php
