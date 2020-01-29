@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: endl
+# key: endl
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+<< std::endl;
