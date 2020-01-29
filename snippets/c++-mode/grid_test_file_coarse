@@ -1,0 +1,84 @@
+# -*- mode: snippet -*-
+# name: Grid test file with coarse level added
+# key: grid_test_file_coarse
+# group: grid
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+/*************************************************************************************
+
+    Grid physics library, www.github.com/paboyle/Grid
+
+    Source file: ./${1:path_from_project_root}
+
+    Copyright (C) 2015 - ${2:Current Year}
+
+    Author: Daniel Richtmann <daniel.richtmann@gmail.com>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+    See the full license in the file "LICENSE" in the top level distribution directory
+*************************************************************************************/
+/*  END LEGAL */
+
+#include <Grid/Grid.h>
+#include <tests/multigrid/Multigrid.h>
+#include <benchmarks/Benchmark_helpers.h>
+
+using namespace Grid;
+using namespace Grid::BenchmarkHelpers;
+using namespace Grid::Rework;
+
+int main(int argc, char** argv) {
+  Grid_init(&argc, &argv);
+  /////////////////////////////////////////////////////////////////////////////
+  //                          Read from command line                         //
+  /////////////////////////////////////////////////////////////////////////////
+
+  Coordinate blockSize = readFromCommandLineCoordinate(&argc, &argv, "--blocksize", Coordinate({2, 2, 2, 2}));
+
+  /////////////////////////////////////////////////////////////////////////////
+  //                              General setup                              //
+  /////////////////////////////////////////////////////////////////////////////
+
+  Coordinate clatt = calcCoarseLattSize(GridDefaultLatt(), blockSize);
+
+  GridCartesian*         FGrid   = SpaceTimeGrid::makeFourDimGrid(GridDefaultLatt(), GridDefaultSimd(Nd, vComplex::Nsimd()), GridDefaultMpi());
+  GridCartesian*         CGrid   = SpaceTimeGrid::makeFourDimGrid(clatt, GridDefaultSimd(Nd, vComplex::Nsimd()), GridDefaultMpi());
+  GridRedBlackCartesian* FrbGrid = SpaceTimeGrid::makeFourDimRedBlackGrid(FGrid);
+  GridRedBlackCartesian* CrbGrid = SpaceTimeGrid::makeFourDimRedBlackGrid(CGrid);
+
+  std::cout << GridLogMessage << "FGrid:" << std::endl; FGrid->show_decomposition();
+  std::cout << GridLogMessage << "CGrid:" << std::endl; CGrid->show_decomposition();
+  std::cout << GridLogMessage << "FrbGrid:" << std::endl; FrbGrid->show_decomposition();
+  std::cout << GridLogMessage << "CrbGrid:" << std::endl; CrbGrid->show_decomposition();
+
+  GridParallelRNG FPRNG(FGrid);
+  GridParallelRNG CPRNG(CGrid);
+
+  std::vector<int> seeds({1, 2, 3, 4});
+
+  FPRNG.SeedFixedIntegers(seeds);
+  CPRNG.SeedFixedIntegers(seeds);
+
+  // clang-format off
+  LatticeFermion    src(FGrid); random(FPRNG, src);
+  LatticeFermion    res(FGrid); res = Zero();
+  LatticeGaugeField Umu(FGrid); SU3::HotConfiguration(FPRNG, Umu);
+  // clang-format on
+
+  $0
+
+  Grid_finalize();
+}
