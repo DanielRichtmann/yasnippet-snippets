@@ -40,6 +40,10 @@ using namespace Grid;
 using namespace Grid::BenchmarkHelpers;
 using namespace Grid::Rework;
 
+#ifndef NBASIS
+#define NBASIS 40
+#endif
+
 int main(int argc, char** argv) {
   Grid_init(&argc, &argv);
   /////////////////////////////////////////////////////////////////////////////
