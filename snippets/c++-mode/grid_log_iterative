@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Grid log iterative to standard out
+# key: grid_log_iterative
+# group: grid
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+std::cout << GridLogIterative << $0 << std::endl;

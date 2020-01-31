@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Grid log error to standard out
+# key: grid_log_error
+# group: grid
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+std::cout << GridLogError << $0 << std::endl;

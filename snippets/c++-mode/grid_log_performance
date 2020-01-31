@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Grid log performance to standard out
+# key: grid_log_performance
+# group: grid
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+std::cout << GridLogPerformance << $0 << std::endl;

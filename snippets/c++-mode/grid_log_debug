@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Grid log debug to standard out
+# key: grid_log_debug
+# group: grid
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+std::cout << GridLogDebug << $0 << std::endl;

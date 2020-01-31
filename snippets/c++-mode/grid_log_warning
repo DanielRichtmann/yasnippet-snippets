@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Grid log warning to standard out
+# key: grid_log_warning
+# group: grid
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+std::cout << GridLogWarning << $0 << std::endl;
