@@ -4,13 +4,16 @@
 # contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-#!/bin/bash -eu
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
 
-function ${1:function_name}() {
+${5:# ${6:Some comment here}}
+function ${1:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}() {
     local -r usage="
-Usage: \${FUNCNAME[0]} ${2:description_of_arguments}"
+Usage: \${FUNCNAME[0]}${2: ${3:description_of_arguments}}"
 
-    if [[ \$# != ${3:allowed_number_of_arguments} ]]; then
+    if [[ \$# != ${4:allowed_number_of_arguments} ]]; then
         echo "$usage" >> /dev/stderr
         return 1
     fi
