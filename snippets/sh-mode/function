@@ -2,7 +2,7 @@
 # name: function
 # key: func
 # --
-${2:# ${3:Some comment here}}
-function ${1:name}() {
+${2:# ${3:Some comment here}
+}function ${1:name}() {
     $0
 }
