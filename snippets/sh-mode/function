@@ -2,7 +2,15 @@
 # name: function
 # key: func
 # --
-${2:# ${3:Some comment here}
+${5:# ${6:Some comment here}
 }function ${1:name}() {
+    local -r usage="
+Usage: \${FUNCNAME[0]}${2: ${3:description_of_arguments}}"
+
+    if [[ \$# != ${4:allowed_number_of_arguments} ]]; then
+        echo "$usage" >> /dev/stderr
+        return 1
+    fi
+
     $0
 }
