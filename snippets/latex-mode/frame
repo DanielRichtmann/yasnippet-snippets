@@ -2,7 +2,6 @@
 # name: frame
 # key: fr
 # --
-\begin{frame}${1:[$2]}
-        ${3:\frametitle{$4}}
-        $0
+\begin{frame}${1:[${2:options}]}{${3:frame_title}}
+    $0
 \end{frame}
