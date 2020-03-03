@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: case_option
+# key: case_option
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
+# --
+${2:option})
+    ${3:stuff_for_option}
+    ;;

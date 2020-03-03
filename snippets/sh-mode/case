@@ -1,10 +1,13 @@
 # -*- mode: snippet -*-
-# name : case
+# name: case
 # key: case
+# contributor: Daniel Richtmann <daniel.richtmann@gmail.com>
 # --
-case ${1:cond} in
-    ${2:pattern} )
-        ${3:stuff}
+case \$${1:variable} in
+    ${2:first_option})
+        ${3:stuff_for_first_option}
         ;;
-    $0
+    *)
+        ${4:stuff_for_default_option}
+        ;;
 esac
